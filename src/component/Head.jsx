@@ -1,6 +1,32 @@
 import React from 'react'
 
 const Head = () => {
+     const navItem = [
+          {
+               name: "Swiggy Corporate",
+               image: <i className="fi mt-2 fi-br-briefcase "></i>
+          },
+          {
+               name: "Search",
+               image: <i className="fi mt-2 fi-br-search"></i>
+          },
+          {
+               name: "Offers",
+               image: <i className="fi mt-2 fi-br-badge-percent"></i>
+          },
+          {
+               name: "Help",
+               image: <i className="fi mt-2 fi-br-info"></i>
+          },
+          {
+               name: "Sign In",
+               image: <i className="fi mt-2 fi-rs-user"></i>
+          },
+          {
+               name: "Cart",
+               image: <i className="fi mt-2 fi-br-cart-shopping-fast"></i>
+          },
+     ]
      return (
           <div className='w-full shadow-md h-20 flex justify-center items-center'>
                <div className='  w-[95%] flex items-center justify-between'>
@@ -14,30 +40,23 @@ const Head = () => {
                     </div>
 
                     <div className='flex justify-between gap-10'>
-                         <div className='cursor-pointer flex items-center justify-center gap-2 hover:text-orange-500 font-semibold'>
-                              <i className="fi mt-1 fi-br-briefcase"></i>
-                              <p>Swiggy Corporate</p>
-                         </div>
-                         <div className='cursor-pointer flex items-center justify-center gap-2 hover:text-orange-500 font-semibold'>
-                              <i className="fi mt-1 fi-br-search"></i>
-                              <p>Search</p>
-                         </div>
-                         <div className='cursor-pointer flex items-center justify-center gap-2 hover:text-orange-500 font-semibold'>
-                              <i className="fi mt-1 fi-br-badge-percent"></i>
-                              <p>Offers</p>
-                         </div>
-                         <div className='cursor-pointer flex items-center justify-center gap-2 hover:text-orange-500 font-semibold'>
-                              <i className="fi mt-1 fi-br-info"></i>
-                              <p>Help</p>
-                         </div>
-                         <div className='cursor-pointer flex items-center justify-center gap-2 hover:text-orange-500 font-semibold'>
-                              <i className="fi mt-1 fi-rs-user"></i>
-                              <p>Sign In</p>
-                         </div>
-                         <div className='cursor-pointer flex items-center justify-center gap-2 hover:text-orange-500 font-semibold'>
-                              <i className="fi mt-1 fi-br-cart-shopping-fast"></i>
-                              <p>Cart</p>
-                         </div>
+                         {
+                              navItem.map((ele, ind) => {
+                                   return (
+                                        <div key={ind + 1} className='cursor-pointer flex items-center justify-center gap-2 text-gray-400 hover:text-orange-500 font-semibold'>
+                                             <p className='mt-1'>{ele.image}</p>
+                                             <p>{ele.name}</p>
+
+                                        </div>
+                                   )
+                              })
+                         }
+
+
+
+
+
+
                     </div>
                </div>
           </div>
